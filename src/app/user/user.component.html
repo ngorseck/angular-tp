@@ -1,0 +1,35 @@
+<div class="col-xl-12 col-lg-7">
+  <div class="card shadow mb-3">
+    <!-- Card Header - Dropdown -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">Liste des utilisateurs</h6>
+    </div>
+    <!-- Card Body -->
+    <div class="card-body">
+      <div *ngIf="this.confirmation != ''" class="alert alert-success">
+            {{ this.confirmation }}
+      </div>
+      <table class="table table-bordered table-responsive-md">
+        <tr>
+          <th>Identifiant</th>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Email</th>
+          <th>Mot de passe</th>
+          <th>Action</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let u of users">
+          <td>{{u.id}}</td>
+          <td>{{u.nom}}</td>
+          <td>{{u.prenom}}</td>
+          <td>{{u.email}}</td>
+          <td>{{u.password}}</td>
+          <td><a href="/pages/edituser/{{u.id}}">Editer</a></td>
+          <td><a href="/pages/deleteuser/{{u.id}}">Supprimer</a></td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</div>
